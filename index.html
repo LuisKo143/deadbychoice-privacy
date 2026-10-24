@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Privacy Policy — Dead by Choice Automation</title>
+<style>
+:root{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#20232b;background:#f5f5f7;line-height:1.65}
+*{box-sizing:border-box}body{margin:0}main{max-width:850px;margin:48px auto;padding:36px;background:#fff;border:1px solid #e3e3e8;border-radius:18px}
+.brand{font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:#6c4d99;font-weight:750}h1{font-size:clamp(28px,5vw,42px);line-height:1.15;letter-spacing:-.035em;margin:14px 0}h2{font-size:20px;margin-top:30px;line-height:1.35}p,ul{margin:12px 0}.meta{color:#626572;font-size:14px}.notice{background:#fff7e6;border-left:4px solid #cc8b12;padding:16px 20px;margin:26px 0}a{color:#623c94;overflow-wrap:anywhere}footer{margin-top:36px;border-top:1px solid #ddd;padding-top:18px;font-size:14px;color:#626572}li{margin:6px 0}
+@media(max-width:600px){main{margin:0;padding:26px 20px;border:0;border-radius:0}}
+</style>
+</head>
+<body><main>
+<div class="brand">Dead by Choice · @deadbychoice.series</div>
+<h1>Privacy Policy</h1>
+<p class="meta">Dead by Choice Automation · Draft dated 24 October 2026</p>
+<aside class="notice"><strong>Draft — operational settings still to be confirmed.</strong>
+This document describes the intended Instagram voting workflow. Before using it as the final privacy policy, confirm the retention settings, handling of execution logs and backups, and applicable arrangements with service providers. The proposed 30-day retention below has not yet been verified in the running system.</aside>
+
+<h2>1. Who is responsible?</h2>
+<p>Luis Kollnig operates Dead by Choice Automation for the Instagram account <strong>@deadbychoice.series</strong> in Austria.
+For privacy questions or deletion requests, contact <a href="mailto:luis.kollnig@gmail.com">luis.kollnig@gmail.com</a>.</p>
+
+<h2>2. What the application does</h2>
+<p>The application reads comments on this account's own Instagram posts to count audience votes, such as A or B, and determine how a fictional story continues. The account owner reviews and manually uploads the resulting videos.</p>
+<p>The planned workflow does not automatically publish posts, send direct messages, reply to comments, hide comments or delete comments. A technical permission may enable additional actions, but they are not part of this workflow.</p>
+
+<h2>3. Data and sources</h2>
+<p>Data is obtained through Meta's official Instagram API for the connected professional account. Depending on the API response and enabled workflow steps, it includes:</p>
+<ul>
+<li>Account ID and username of the connected account.</li>
+<li>Post IDs, captions, publication times and links.</li>
+<li>Comment IDs, text, publication times and, when available, the author's account ID or username.</li>
+<li>Vote totals, winning options, cut-off times and technical job identifiers.</li>
+<li>Technical execution logs needed to diagnose failed requests.</li>
+</ul>
+<p>Access tokens are stored as credentials in the self-hosted n8n installation. The application does not request commenters' Instagram passwords.</p>
+
+<h2>4. Purposes and legal basis</h2>
+<p>The proposed legal basis is legitimate interests under Article 6(1)(f) GDPR: operating a transparent audience vote, identifying duplicate votes where supported, maintaining story continuity and diagnosing technical failures. This basis and the balance of interests must be assessed before production use.</p>
+<p>Voting is voluntary. You can watch the stories without submitting a vote. There is no statutory or contractual requirement to provide a voting comment.</p>
+<p>Automatic vote counting affects a fictional story. It is not intended to make decisions about a person with legal or similarly significant effects, or to profile commenters.</p>
+
+<h2>5. Processing and recipients</h2>
+<p>Comment retrieval and vote counting run in a self-hosted n8n installation on the operator's Debian server. Execution logs can contain API responses, including comment data, and must follow the retention rules below.</p>
+<p>The intended handoff to the private GitHub project and to OpenAI's ChatGPT/Codex cloud contains <strong>only aggregate vote results, technical job information and fictional story context</strong>. Raw comments, commenter names, commenter IDs and access tokens must not be included in these handoffs. This separation still needs to be verified in the completed workflow.</p>
+<p>Meta, GitHub and OpenAI also process data under their respective service terms and privacy information. GitHub and OpenAI are not the same processing environment as the operator's local server. The applicable provider roles and any international-transfer arrangements must be confirmed before processing personal data through these services.</p>
+<p>Comment data is not intended to be sold or used for advertising profiles.</p>
+
+<h2>6. Retention — proposed configuration</h2>
+<p><strong>Target, not yet verified:</strong> delete raw comment copies and execution logs containing personal data within 30 days of collection. Configure and check the same policy for manual and failed executions. Backups require a separately defined expiry period before production use.</p>
+<p>Aggregate story outcomes may be kept for continuity, provided they do not contain identifiers or information that singles out an individual voter. The original Instagram comments remain subject to the account holder's and Meta's controls; deleting local copies does not delete the original comment on Instagram.</p>
+
+<h2 id="data-deletion">7. Your rights and deletion requests</h2>
+<p>Subject to the GDPR's applicable conditions, you may request access, correction, erasure or restriction of processing. You may object to processing based on legitimate interests. Data portability applies where its legal conditions are met.</p>
+<p>To request deletion of copies held by this application, email <a href="mailto:luis.kollnig@gmail.com?subject=Dead%20by%20Choice%20-%20data%20deletion">luis.kollnig@gmail.com</a> with the subject “Dead by Choice — data deletion”. Include your Instagram username and the relevant post link or comment details so the data can be located. Do not send your password or an access token.</p>
+<p>Deleting your comment on Instagram may not remove a copy already held in an execution log. Contact the operator if you also want local copies removed. Removal of a local copy does not necessarily reverse a previously completed aggregate story vote.</p>
+<p>You may lodge a complaint with a supervisory authority, including the <a href="https://www.dsb.gv.at/">Austrian Data Protection Authority</a>.</p>
+
+<h2>8. This website</h2>
+<p>This static page contains no analytics scripts, tracking pixels, embedded social widgets or external fonts. It does not itself set cookies. When hosted on GitHub Pages, GitHub logs visitors' IP addresses for security purposes, including visits by people not signed into GitHub. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Privacy Statement</a>.</p>
+<p>Instagram's separate processing is described in <a href="https://privacycenter.instagram.com/policy/">Meta's Privacy Policy</a>.</p>
+
+<h2>9. Changes</h2>
+<p>This policy will be updated when the workflow, providers or retention settings change. The final version must describe the actual operating configuration before audience voting begins.</p>
+<footer>Dead by Choice Automation · Contact: <a href="mailto:luis.kollnig@gmail.com">luis.kollnig@gmail.com</a><br>Setup draft — not yet the final production policy.</footer>
+</main></body></html>
+
