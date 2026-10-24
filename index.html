@@ -15,9 +15,9 @@
 <body><main>
 <div class="brand">Dead by Choice · @deadbychoice.series</div>
 <h1>Privacy Policy</h1>
-<p class="meta">Dead by Choice Automation · Draft dated 24 October 2026</p>
-<aside class="notice"><strong>Draft — operational settings still to be confirmed.</strong>
-This document describes the intended Instagram voting workflow. Before using it as the final privacy policy, confirm the retention settings, handling of execution logs and backups, and applicable arrangements with service providers. The proposed 30-day retention below has not yet been verified in the running system.</aside>
+<p class="meta">Dead by Choice Automation · Last updated: 24 October 2026</p>
+<aside class="notice"><strong>Service status: technical setup and testing.</strong>
+The application is being configured for the audience-voting process described below. Public automated voting has not yet started. Test API requests and their execution logs are covered by this policy.</aside>
 
 <h2>1. Who is responsible?</h2>
 <p>Luis Kollnig operates Dead by Choice Automation for the Instagram account <strong>@deadbychoice.series</strong> in Austria.
@@ -39,18 +39,20 @@ For privacy questions or deletion requests, contact <a href="mailto:luis.kollnig
 <p>Access tokens are stored as credentials in the self-hosted n8n installation. The application does not request commenters' Instagram passwords.</p>
 
 <h2>4. Purposes and legal basis</h2>
-<p>The proposed legal basis is legitimate interests under Article 6(1)(f) GDPR: operating a transparent audience vote, identifying duplicate votes where supported, maintaining story continuity and diagnosing technical failures. This basis and the balance of interests must be assessed before production use.</p>
+<p>Processing for operation and technical testing is based on legitimate interests under Article 6(1)(f) GDPR: running a voluntary audience vote on the operator's own posts, maintaining story continuity, preventing duplicate votes where supported, and diagnosing technical failures. Processing is limited to these purposes; commenters may object as explained below.</p>
 <p>Voting is voluntary. You can watch the stories without submitting a vote. There is no statutory or contractual requirement to provide a voting comment.</p>
 <p>Automatic vote counting affects a fictional story. It is not intended to make decisions about a person with legal or similarly significant effects, or to profile commenters.</p>
 
 <h2>5. Processing and recipients</h2>
 <p>Comment retrieval and vote counting run in a self-hosted n8n installation on the operator's Debian server. Execution logs can contain API responses, including comment data, and must follow the retention rules below.</p>
-<p>The intended handoff to the private GitHub project and to OpenAI's ChatGPT/Codex cloud contains <strong>only aggregate vote results, technical job information and fictional story context</strong>. Raw comments, commenter names, commenter IDs and access tokens must not be included in these handoffs. This separation still needs to be verified in the completed workflow.</p>
-<p>Meta, GitHub and OpenAI also process data under their respective service terms and privacy information. GitHub and OpenAI are not the same processing environment as the operator's local server. The applicable provider roles and any international-transfer arrangements must be confirmed before processing personal data through these services.</p>
+<p>The workflow is designed to pass <strong>only aggregate vote results, technical job information and fictional story context</strong> to the private GitHub project and OpenAI's ChatGPT/Codex cloud. Individual comments, commenter names, commenter IDs and access tokens are excluded from that handoff. During setup, the operator checks this data boundary before enabling automated audience voting.</p>
+<p>Meta provides the Instagram account and API. GitHub hosts this public policy page and the private technical handoff repository. OpenAI provides cloud story generation and rendering. GitHub and OpenAI do not receive raw audience comment data through the planned handoff. Provider processing, including website access information, is subject to the respective privacy information. GitHub and Meta may process service data internationally, including in the United States; their privacy information explains applicable transfer arrangements. Links are provided below.</p>
 <p>Comment data is not intended to be sold or used for advertising profiles.</p>
 
-<h2>6. Retention — proposed configuration</h2>
-<p><strong>Target, not yet verified:</strong> delete raw comment copies and execution logs containing personal data within 30 days of collection. Configure and check the same policy for manual and failed executions. Backups require a separately defined expiry period before production use.</p>
+<h2>6. Retention</h2>
+<p>The current self-hosted n8n installation uses its default execution-data settings. Successful, failed and manual executions can be saved, including the API responses they contain. Automatic pruning is enabled by default: completed executions become eligible for deletion after 336 hours (14 days), or earlier when the execution-count limit is reached. Deletion runs periodically, so 14 days is a pruning threshold rather than an exact deletion deadline.</p>
+<p>Unfinished or waiting executions and annotated executions can be excluded from automatic pruning. Such records are retained for the ongoing run or the troubleshooting purpose for which they are kept, rather than as a separate voting archive. They require manual review and deletion when that purpose ends. The current setup has no automatic server or n8n backups or snapshots. This description will be updated if backup storage is introduced.</p>
+<p>No separate archive of raw voting comments is part of the planned workflow. Credentials remain stored while the connection is needed and are removed when it is discontinued. Privacy-related correspondence is retained while necessary to handle the request and any resulting obligations or dispute.</p>
 <p>Aggregate story outcomes may be kept for continuity, provided they do not contain identifiers or information that singles out an individual voter. The original Instagram comments remain subject to the account holder's and Meta's controls; deleting local copies does not delete the original comment on Instagram.</p>
 
 <h2 id="data-deletion">7. Your rights and deletion requests</h2>
@@ -64,7 +66,7 @@ For privacy questions or deletion requests, contact <a href="mailto:luis.kollnig
 <p>Instagram's separate processing is described in <a href="https://privacycenter.instagram.com/policy/">Meta's Privacy Policy</a>.</p>
 
 <h2>9. Changes</h2>
-<p>This policy will be updated when the workflow, providers or retention settings change. The final version must describe the actual operating configuration before audience voting begins.</p>
-<footer>Dead by Choice Automation · Contact: <a href="mailto:luis.kollnig@gmail.com">luis.kollnig@gmail.com</a><br>Setup draft — not yet the final production policy.</footer>
+<p>This policy will be updated when the workflow, providers or retention settings change. Material changes affecting audience voting will be explained before the new processing begins.</p>
+<footer>Dead by Choice Automation · Contact: <a href="mailto:luis.kollnig@gmail.com">luis.kollnig@gmail.com</a><br><a href="#data-deletion">Data deletion instructions</a></footer>
 </main></body></html>
 
